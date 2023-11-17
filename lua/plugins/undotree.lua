@@ -18,6 +18,12 @@ return {
     extensions = {
       undo = {
         -- telescope-undo.nvim config, see below
+        side_by_side = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.8,
+        },
+        saved_only = true,
       },
       -- no other extensions here, they can have their own spec too
     },
