@@ -11,12 +11,12 @@ local keymap = function(mode, lhs, rhs, opts)
 end
 
 -- Move line
-keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
--- Search cursor in the middle
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "Nzzzv")
+-- -- Search cursor in the middle
+-- keymap("n", "n", "nzzzv")
+-- keymap("n", "N", "Nzzzv")
 
 -- replace without copy current selected
 -- keymap('x', '<leader>p', "\"_dp")
@@ -45,3 +45,7 @@ keymap("n", "Q", "<Nop>")
 keymap("n", "QQ", ":q!<enter>", { noremap = false })
 keymap("n", "WW", ":w!<enter>", { noremap = false })
 keymap("n", "WQ", ":wq<enter>", { noremap = false })
+
+-- disable
+vim.keymap.del({ "n", "i", "v" }, "<A-j>")
+vim.keymap.del({ "n", "i", "v" }, "<A-k>")
