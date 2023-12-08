@@ -5,6 +5,7 @@ return {
   },
   opts = {
     close_if_last_window = true,
+    hide_root_node = true,
     filesystem = {
       filtered_items = {
         never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
@@ -14,6 +15,9 @@ return {
           "node_modules",
         },
       },
+    },
+    source_selector = {
+      winbar = true,
     },
   },
 }
