@@ -30,7 +30,7 @@ keymap(
   "n",
   "<leader>R",
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "[R]eplace words in the file" }
+  { desc = "[R]eplace [w]ords in the file" }
 )
 -- delete line with selected in the file
 keymap("n", "<leader>dl", [[:g/\<<C-r><C-w>\>/d]], { desc = "[D]elete [L]ine with selected word in the file" })
@@ -42,9 +42,9 @@ keymap("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make [
 keymap("n", "Q", "<Nop>")
 
 -- Files
-keymap("n", "QQ", ":q!<enter>", { noremap = false })
-keymap("n", "WW", ":w!<enter>", { noremap = false })
-keymap("n", "WQ", ":wq<enter>", { noremap = false })
+keymap("n", "QQ", ":q!<enter>", { noremap = false, silent = true })
+keymap("n", "WW", ":w!<enter>", { noremap = false, silent = true })
+keymap("n", "WQ", ":wq<enter>", { noremap = false, silent = true })
 
 -- disable
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
