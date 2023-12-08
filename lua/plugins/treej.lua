@@ -1,6 +1,6 @@
 return {
   "Wansmer/treesj",
-  event = "VeryLazy",
+  event = "LazyFile",
   keys = {
     { "J", "<cmd>TSJToggle<cr>", desc = "[J]oin Toggle" },
   },

@@ -1,5 +1,6 @@
 return {
   "debugloop/telescope-undo.nvim",
+  event = "LazyFile",
   dependencies = { -- note how they're inverted to above example
     {
       "nvim-telescope/telescope.nvim",
@@ -23,7 +24,7 @@ return {
         layout_config = {
           preview_height = 0.8,
         },
-        saved_only = true,
+        -- saved_only = true,
       },
       -- no other extensions here, they can have their own spec too
     },
