@@ -2,7 +2,7 @@ return {
   "f-person/git-blame.nvim",
   event = "LazyFile",
   config = function()
-    require("git-blame").setup({
+    require("gitblame").setup({
       enabled = true,
     })
   end,
