@@ -23,9 +23,14 @@ local customPrompts = {
     prompt = prefix .. "Regenerate the code snippet below, but please include comments on each line of code: $text.",
     replace = true,
   },
+
+  Write_Function_Comments = {
+    prompt = prefix .. "Regenerate the code snippet below, but please include comments on top of function: $text.",
+    replace = true,
+  },
 }
 local model = {
-  Codellama = "codellama:7b-instruct",
+  Codellama = "codellama:7b",
   Mistral = "mistral",
   Llama2 = "llama2",
 }
