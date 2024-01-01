@@ -1,5 +1,6 @@
 local merge_enum = require("utils").merge_enum
-local prefix = "You are a software engineer that writes simple, concise code and explanations."
+local prefix =
+  "You are a software engineer that writes simple, concise code and good explanations, do not explain without asked to."
 local customPrompts = {
   Explain_Code = {
     prompt = prefix .. "Explain how the code works: $text",
@@ -29,11 +30,6 @@ local customPrompts = {
     replace = true,
   },
 }
-local model = {
-  Codellama = "codellama:7b",
-  Mistral = "mistral",
-  Llama2 = "llama2",
-}
 
 return {
   "David-Kunz/gen.nvim",
@@ -44,7 +40,7 @@ return {
   config = function()
     local gen = require("gen")
     gen.prompts = merge_enum(gen.prompts, customPrompts)
-    gen.model = model.Mistral
+    gen.model = "mistral"
     gen.display_mode = "split"
   end,
 }

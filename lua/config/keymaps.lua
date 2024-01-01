@@ -42,10 +42,14 @@ keymap("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make [
 keymap("n", "Q", "<Nop>")
 
 -- Files
-keymap("n", "QQ", ":q!<enter>", { noremap = false, silent = true })
-keymap("n", "WW", ":w!<enter>", { noremap = false, silent = true })
-keymap("n", "WQ", ":wq<enter>", { noremap = false, silent = true })
+-- keymap("n", "QQ", ":q!<enter>", { noremap = false, silent = true })
+-- keymap("n", "WW", ":w!<enter>", { noremap = false, silent = true })
+-- keymap("n", "WQ", ":wq<enter>", { noremap = false, silent = true })
 
 -- disable
 vim.keymap.del({ "n", "i", "v" }, "<A-j>")
 vim.keymap.del({ "n", "i", "v" }, "<A-k>")
+
+-- macro
+vim.keymap.set("n", "Q", "@qj", { noremap = true, silent = true })
+vim.keymap.set("x", "Q", ":norm @q<cr>", { noremap = true, silent = true })
