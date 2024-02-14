@@ -3,4 +3,5 @@
 -- Add any additional options here
 
 vim.opt.scrolloff = 8
-vim.opt.wrap = true
+-- vim.opt.wrap = true
+vim.opt.colorcolumn = "80"

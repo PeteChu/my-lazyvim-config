@@ -53,3 +53,12 @@ vim.keymap.del({ "n", "i", "v" }, "<A-k>")
 -- macro
 vim.keymap.set("n", "Q", "@qj", { noremap = true, silent = true })
 vim.keymap.set("x", "Q", ":norm @q<cr>", { noremap = true, silent = true })
+
+-- smart_dd
+vim.keymap.set("n", "dd", function()
+  if vim.api.nvim_get_current_line():match("^%s*$") then
+    return '"_dd'
+  else
+    return "dd"
+  end
+end, { noremap = true, expr = true })
