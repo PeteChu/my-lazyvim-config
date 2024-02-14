@@ -32,15 +32,15 @@ local customPrompts = {
 }
 
 return {
-  "David-Kunz/gen.nvim",
-  event = "LazyFile",
-  keys = {
-    { "<leader>o", ":Gen<CR>", mode = { "n", "v" }, desc = "[O]llama" },
-  },
-  config = function()
-    local gen = require("gen")
-    gen.prompts = merge_enum(gen.prompts, customPrompts)
-    gen.model = "mistral"
-    gen.display_mode = "split"
-  end,
+  -- "David-Kunz/gen.nvim",
+  -- event = "LazyFile",
+  -- keys = {
+  --   { "<leader>o", ":Gen<CR>", mode = { "n", "v" }, desc = "[O]llama" },
+  -- },
+  -- config = function()
+  --   local gen = require("gen")
+  --   gen.prompts = merge_enum(gen.prompts, customPrompts)
+  --   gen.model = "dolphin-mistral"
+  --   gen.display_mode = "split"
+  -- end,
 }

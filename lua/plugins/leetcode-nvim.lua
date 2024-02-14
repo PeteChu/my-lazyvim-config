@@ -17,6 +17,6 @@ return {
   -- opts = {
   --   -- configuration goes here
   --   arg = leet_arg,
-  --   lang = "python",
+  --   lang = "rust",
   -- },
 }
