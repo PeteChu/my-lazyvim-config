@@ -21,20 +21,18 @@ return {
     -- Setup
     Worktree.setup()
     require("telescope").load_extension("git_worktree")
+
     -- Hooks
-    -- Worktree.on_tree_change(function(op, metadata)
-    --   if op == Worktree.Operations.Switch then
-    --     -- Check if the repo is a nodejs
-    --     local isNodeJsProject = Utils.checkIfNodeJsProject(metadata.path)
-    --
-    --     if isNodeJsProject then
-    --       local packageManager = Utils.checkNodePackageManager(metadata.path)
-    --       Job:new({
-    --         packageManager,
-    --         "install",
-    --       }):start()
-    --     end
-    --   end
-    -- end)
+    Worktree.on_tree_change(function()
+      local isProject, packageManager = Utils.isNodejsProject()
+
+      if isProject then
+        print("Installing node's dependencies using: " .. packageManager)
+        Job:new({
+          packageManager,
+          "install",
+        }):start()
+      end
+    end)
   end,
 }

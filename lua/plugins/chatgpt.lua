@@ -54,7 +54,10 @@ return {
     require("chatgpt").setup({
       api_host_cmd = "echo -n http://localhost:8080",
       api_key_cmd = "pass show api/gh-copilot",
-      actions_paths = "./chatgpt.nvim/action.json",
+      actions_paths = {
+        -- "./chatgpt.nvim/action.json",
+        vim.fn.expand("~/.config/nvim/lua/plugins/chatgpt.nvim/action.json"),
+      },
       -- api_key_cmd = "pass show api/openai",
     })
   end,

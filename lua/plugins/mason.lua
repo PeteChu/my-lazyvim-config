@@ -6,9 +6,9 @@ return {
       "shfmt",
       "prettierd", -- ts/js formatter
       "eslint_d", -- ts/js linter
-      "gofumpt",
-      "goimports-reviser",
-      "golines",
+      -- "gofumpt",
+      -- "goimports-reviser",
+      -- "golines",
     },
   },
 }

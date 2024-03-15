@@ -27,4 +27,24 @@ M.merge_enum = function(e1, e2)
   return Enum
 end
 
+M.isNodejsProject = function()
+  local packageManagers = {
+    { name = "pnpm", lockFile = "pnpm-lock.yaml" },
+    { name = "yarn", lockFile = "yarn.lock" },
+    { name = "npm", lockFile = "package-lock.json" },
+    { name = "bun", lockFile = "bun.lockb" },
+  }
+
+  for _, packageManager in ipairs(packageManagers) do
+    local lockFile = packageManager.lockFile
+    local file = io.open(lockFile, "r")
+    if file then
+      file:close()
+      return true, packageManager.name
+    end
+  end
+
+  return false, nil
+end
+
 return M
