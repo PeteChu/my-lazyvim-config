@@ -1,6 +1,6 @@
 return {
   "jackMort/ChatGPT.nvim",
-  event = "LazyFile",
+  cmd = { "ChatGPT", "ChatGPTEditWithInstruction", "ChatGPTRun" },
   keys = {
     {
       "<leader>C",

@@ -15,18 +15,24 @@ return {
     opts.defaults = {
       file_ignore_patterns = { "node_modules" },
       color_devicons = true,
-      layout_strategy = "horizontal",
+      layout_strategy = "vertical",
       layout_config = {
-        horizontal = {
-          prompt_position = "bottom",
-          preview_width = 0.55,
-        },
+        -- center = {
+        --   prompt_position = "top",
+        -- },
+        -- horizontal = {
+        --   prompt_position = "bottom",
+        --   preview_width = 0.55,
+        -- },
         vertical = {
-          mirror = false,
+          mirror = true,
+          prompt_position = "bottom",
+          height = 0.8,
+          width = 0.7,
         },
         width = 0.87,
         height = 0.80,
-        preview_cutoff = 120,
+        -- preview_cutoff = 120,
       },
     }
     opts.pickers = {

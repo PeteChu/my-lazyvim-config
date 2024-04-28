@@ -12,7 +12,7 @@ return {
   },
   opts = {
     window = {
-      position = "current", -- left, right, top, bottom, float, current
+      position = "right", -- left, right, top, bottom, float, current
     },
     close_if_last_window = true,
     hide_root_node = true,

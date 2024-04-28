@@ -3,7 +3,7 @@ local prompts = require("plugins.ollama.prompt").prompts
 
 return {
   "David-Kunz/gen.nvim",
-  event = "LazyFile",
+  cmd = { "Gen" },
   keys = {
     { "<leader>o", ":Gen<CR>", mode = { "n", "v" }, desc = "[O]llama" },
   },
@@ -11,6 +11,7 @@ return {
     local gen = require("gen")
     gen.prompts = merge_enum(gen.prompts, prompts)
     gen.model = "dolphin-mistral"
+    -- gen.model = "phi3"
     gen.display_mode = "split"
   end,
 }

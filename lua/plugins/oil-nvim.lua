@@ -4,9 +4,18 @@ return {
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
-    { "-", "<cmd>Oil<cr>", desc = "Open parent directory", silent = true },
+    {
+      "-",
+      "<cmd>Oil<cr>",
+      desc = "Open parent directory",
+      silent = true,
+    },
   },
   config = function()
-    require("oil").setup()
+    require("oil").setup({
+      keymaps = {
+        ["q"] = "actions.close",
+      },
+    })
   end,
 }
