@@ -30,9 +30,6 @@ return {
           height = 0.8,
           width = 0.7,
         },
-        width = 0.87,
-        height = 0.80,
-        -- preview_cutoff = 120,
       },
     }
     opts.pickers = {

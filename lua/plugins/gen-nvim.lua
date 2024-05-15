@@ -10,8 +10,10 @@ return {
   config = function()
     local gen = require("gen")
     gen.prompts = merge_enum(gen.prompts, prompts)
-    gen.model = "dolphin-mistral"
+    -- gen.model = "dolphin-mistral"
+    -- gen.model = "dolphin-llama3"
     -- gen.model = "phi3"
+    gen.model = "llama3:instruct"
     gen.display_mode = "split"
   end,
 }

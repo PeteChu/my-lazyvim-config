@@ -10,3 +10,9 @@ opt.colorcolumn = "80"
 -- opt.textwidth = 80
 
 opt.swapfile = false -- Living on the edge
+
+vim.cmd([[
+  set list
+  set listchars+=eol:↲
+  " set winbar=%=%m\ %f
+]])
