@@ -62,3 +62,5 @@ vim.keymap.set("n", "dd", function()
     return "dd"
   end
 end, { noremap = true, expr = true })
+
+vim.api.nvim_create_user_command("G", require("neogit").open, {})

@@ -7,4 +7,6 @@ return {
   -- { "folke/flash.nvim", enabled = false },
   -- { "stevearc/oil.nvim", enabled = false },
   -- { "rmagatti/auto-session", enabled = false },
+  -- { "nvimdev/lspsaga.nvim", enabled = false },
+  { "kawre/leetcode.nvim", enabled = false },
 }

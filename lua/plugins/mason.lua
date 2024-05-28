@@ -7,6 +7,7 @@ return {
         package_pending = "➜",
         package_uninstalled = "✗",
       },
+      border = "rounded",
     },
     ensure_installed = {
       "stylua",
