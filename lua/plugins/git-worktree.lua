@@ -1,5 +1,5 @@
 return {
-  "ThePrimeagen/git-worktree.nvim",
+  "awerebea/git-worktree.nvim",
   event = "VeryLazy",
   keys = {
     {
@@ -13,6 +13,7 @@ return {
       desc = "Git worktree create",
     },
   },
+  branch = "handle_changes_in_telescope_api",
   config = function()
     local Worktree = require("git-worktree")
     local Job = require("plenary.job")

@@ -14,5 +14,5 @@ opt.swapfile = false -- Living on the edge
 vim.cmd([[
   set list
   set listchars+=eol:↲
-  " set winbar=%=%m\ %f
+  set winbar=%=%m\ %f
 ]])

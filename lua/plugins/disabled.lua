@@ -9,4 +9,5 @@ return {
   -- { "rmagatti/auto-session", enabled = false },
   -- { "nvimdev/lspsaga.nvim", enabled = false },
   { "kawre/leetcode.nvim", enabled = false },
+  -- { "chrishrb/gx.nvim", enabled = false },
 }

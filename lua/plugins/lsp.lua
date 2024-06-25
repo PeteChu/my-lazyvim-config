@@ -5,7 +5,7 @@ return {
       enabled = false,
     },
     inlay_hints = { enabled = false },
-    codelens = { enabled = false },
+    -- codelens = { enabled = true },
     diagnostics = {
       float = {
         border = "rounded",
