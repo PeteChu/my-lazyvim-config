@@ -1,15 +1,5 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  keys = {
-    {
-      "<leader>n",
-      ":Neotree toggle reveal<cr>",
-      mode = { "n" },
-      silent = true,
-      noremap = true,
-      desc = "Toggle [N]eoTree",
-    },
-  },
   opts = {
     window = {
       position = "right", -- left, right, top, bottom, float, current

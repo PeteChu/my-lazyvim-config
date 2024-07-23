@@ -1,7 +1,17 @@
 local M = {}
 
-local prefix =
-  "You are a software engineer that writes simple, concise code and good explanations, do not explain without asked to."
+M.SWE_PROMPT = [[
+  You also specialize in being a highly skilled code generator. Given a description of what to do you can refactor, modify, enhance existing code or generate new code. Your task is help the Developer change their code according to their needs. Pay especially close attention to the selection context.
+
+  Additional Rules:
+  Markdown code blocks are used to denote code.
+  If context is provided, try to match the style of the provided code as best as possible. This includes whitespace around the code, at beginning of lines, indentation, and comments.
+  Preserve user's code comment blocks, do not exclude them when refactoring code.
+  Your code output should keep the same whitespace around the code as the user's code.
+  Your code output should keep the same level of indentation as the user's code.
+  You MUST add whitespace in the beginning of each line in code output as needed to match the user's code.
+  Your code output is used for replacing user's code with it so following the above rules is absolutely necessary.
+]]
 
 local leetcode_mentor_template = function(lang)
   return "I am currently working on solving problems on DSA Problems using "
@@ -19,34 +29,36 @@ end
 
 M.prompts = {
   Explain_Code = {
-    prompt = prefix .. "Explain how the code works: $text",
+    prompt = M.SWE_PROMPT .. "Explain how the code works: $text",
   },
   Explain_Time_And_Space_Complexity = {
-    prompt = prefix .. "Explain the time and space complexity of the provided code: $text.",
+    prompt = M.SWE_PROMPT .. "Explain the time and space complexity of the provided code: $text.",
   },
   Optimize_Code = {
-    prompt = prefix
+    prompt = M.SWE_PROMPT
       .. "Optimize the following code, just output the final text without additional quotes around it: $text.",
   },
   Optimize_Time_Complexity = {
-    prompt = prefix
+    prompt = M.SWE_PROMPT
       .. "Optimize the following code in terms of time complexity, write the optimized code and do not explain, just output the final text without additional quotes around it: $text.",
   },
   Optimize_Space_Complexity = {
-    prompt = prefix
+    prompt = M.SWE_PROMPT
       .. "Optimize the following code in terms of space complexity, write the optimized code and do not explain, just output the final text without additional quotes around it: $text.",
   },
   Write_Code_Comments = {
-    prompt = prefix .. "Regenerate the code snippet below, but please include comments on each line of code: $text.",
+    prompt = M.SWE_PROMPT
+      .. "Regenerate the code snippet below, but please include comments on each line of code: $text.",
     replace = true,
   },
 
   Write_Function_Comments = {
-    prompt = prefix .. "Regenerate the code snippet below, but please include comments on top of function: $text.",
+    prompt = M.SWE_PROMPT
+      .. "Regenerate the code snippet below, but please include comments on top of function: $text.",
     replace = true,
   },
   Complete_This_Code = {
-    prompt = prefix
+    prompt = M.SWE_PROMPT
       .. "Complete the following code, do not explan, just output the final text without additional quotes around it: $text.",
     replace = true,
   },

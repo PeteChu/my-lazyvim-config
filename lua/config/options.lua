@@ -6,8 +6,8 @@ local opt = vim.opt
 
 opt.scrolloff = 10
 opt.colorcolumn = "80"
--- opt.wrap = true
--- opt.textwidth = 80
+opt.wrap = true
+opt.textwidth = 80
 
 opt.swapfile = false -- Living on the edge
 

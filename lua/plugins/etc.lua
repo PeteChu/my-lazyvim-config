@@ -1,4 +1,8 @@
 return {
-  -- "ryanoasis/vim-devicons",
-  { "tpope/vim-sleuth", lazy = true },
+  -- { "tpope/vim-sleuth", lazy = true },
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    opts = {},
+  },
 }

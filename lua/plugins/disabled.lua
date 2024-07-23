@@ -8,6 +8,9 @@ return {
   -- { "stevearc/oil.nvim", enabled = false },
   -- { "rmagatti/auto-session", enabled = false },
   -- { "nvimdev/lspsaga.nvim", enabled = false },
-  { "kawre/leetcode.nvim", enabled = false },
+  -- { "kawre/leetcode.nvim", enabled = false },
   -- { "chrishrb/gx.nvim", enabled = false },
+  { "echasnovski/mini.surround", enabled = false },
+  { "akinsho/flutter-tools.nvim", enabled = false },
+  { "Wansmer/treesj", enabled = false },
 }

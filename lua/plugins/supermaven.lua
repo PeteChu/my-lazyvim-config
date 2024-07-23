@@ -4,7 +4,7 @@ return {
     dependencies = {
       {
         "supermaven-inc/supermaven-nvim",
-        build = ":SupermavenUseFree",
+        -- build = ":SupermavenUseFree",
         opts = {
           disable_inline_completion = true,
           disable_keymaps = true,

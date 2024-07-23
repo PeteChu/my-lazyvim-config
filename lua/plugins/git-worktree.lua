@@ -1,5 +1,6 @@
 return {
   "awerebea/git-worktree.nvim",
+  -- "ThePrimeagen/git-worktree.nvim",
   event = "VeryLazy",
   keys = {
     {
