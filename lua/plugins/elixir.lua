@@ -1,0 +1,24 @@
+return {
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = { lexical = {} },
+  --   },
+  -- },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = { ensure_installed = { "elixir", "heex", "eex" } },
+  -- },
+  -- {
+  --   "nvim-neotest/neotest",
+  --   optional = true,
+  --   dependencies = {
+  --     "jfpedroza/neotest-elixir",
+  --   },
+  --   opts = {
+  --     adapters = {
+  --       ["neotest-elixir"] = {},
+  --     },
+  --   },
+  -- },
+}
