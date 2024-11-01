@@ -1,19 +1,19 @@
 return {
-  {
-    "mbbill/undotree",
-    lazy = true,
-    keys = {
-      {
-        "<leader>su",
-        "<CMD>:UndotreeToggle<CR>",
-        desc = "[S]earch [U]ndoTree",
-      },
-    },
-    config = function()
-      vim.g.undotree_WindowLayout = 4
-      vim.g.undotree_SetFocusWhenToggle = 1
-    end,
-  },
+  -- {
+  --   "mbbill/undotree",
+  --   lazy = true,
+  --   keys = {
+  --     {
+  --       "<leader>su",
+  --       "<CMD>:UndotreeToggle<CR>",
+  --       desc = "[S]earch [U]ndoTree",
+  --     },
+  --   },
+  --   config = function()
+  --     vim.g.undotree_WindowLayout = 4
+  --     vim.g.undotree_SetFocusWhenToggle = 1
+  --   end,
+  -- },
   -- {
   --   "debugloop/telescope-undo.nvim",
   --   cmd = { "Telescope undo" },

@@ -11,6 +11,8 @@ opt.textwidth = 80
 
 opt.swapfile = false -- Living on the edge
 
+opt.laststatus = 3
+
 vim.cmd([[
   set list
   set listchars+=eol:↲

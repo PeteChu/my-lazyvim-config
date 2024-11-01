@@ -12,4 +12,7 @@ return {
   -- { "echasnovski/mini.surround", enabled = false },
   { "akinsho/flutter-tools.nvim", enabled = false },
   -- { "Wansmer/treesj", enabled = false },
+  { "awerebea/git-worktree.nvim", enabled = false },
+  { "yetone/avante.nvim", enabled = false },
+  -- { "CopilotC-Nvim/CopilotChat.nvim", enabled = false },
 }
