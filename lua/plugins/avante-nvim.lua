@@ -5,7 +5,15 @@ return {
   opts = {
     -- add any opts here
     -- provider = "deepseek",
-    provider = "copilot",
+    -- provider = "copilot",
+    provider = "claude", -- Recommend using Claude
+    claude = {
+      endpoint = "https://api.anthropic.com",
+      model = "claude-3-5-sonnet-20241022",
+      temperature = 0,
+      max_tokens = 4096,
+      api_key_name = "cmd:pass show api/claude",
+    },
     vendors = {
       deepseek = {
         endpoint = "https://api.deepseek.com/chat/completions",
@@ -36,9 +44,13 @@ return {
         end,
       },
     },
+    windows = {
+      width = 35,
+    },
   },
-  build = ":AvanteBuild", -- This is optional, recommended tho. Also note that this will block the startup for a bit since we are compiling bindings in Rust.
+  build = "make",
   dependencies = {
+    "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",

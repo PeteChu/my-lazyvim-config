@@ -24,9 +24,12 @@ return {
       },
       view_options = {
         show_hidden = true,
-        is_always_hidden = function(name, bufnr)
-          return name == ".." or name == ".git"
-        end,
+        is_always_hidden = (function()
+          local hidden_dirs = { [".."] = true, [".git"] = true, ["node_modules"] = true }
+          return function(name, bufnr)
+            return hidden_dirs[name] or false
+          end
+        end)(),
       },
     })
   end,
