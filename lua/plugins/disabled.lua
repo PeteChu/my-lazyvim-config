@@ -13,7 +13,7 @@ return {
   { "akinsho/flutter-tools.nvim", enabled = false },
   -- { "Wansmer/treesj", enabled = false },
   { "awerebea/git-worktree.nvim", enabled = false },
-  { "CopilotC-Nvim/CopilotChat.nvim", enabled = false },
+  -- { "CopilotC-Nvim/CopilotChat.nvim", enabled = false },
   -- { "yetone/avante.nvim", enabled = false },
   { "elixir-tools/elixir-tools.nvim", enabled = false },
 }
