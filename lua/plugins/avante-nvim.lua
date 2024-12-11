@@ -9,7 +9,7 @@ return {
     provider = "claude", -- Recommend using Claude
     claude = {
       endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-sonnet-20241022",
+      model = "claude-3-5-sonnet-latest",
       temperature = 0,
       max_tokens = 4096,
       api_key_name = "cmd:pass show api/claude",
@@ -50,11 +50,11 @@ return {
   },
   build = "make",
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
+    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua", -- for providers='copilot'
     {

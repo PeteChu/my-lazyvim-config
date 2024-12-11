@@ -25,7 +25,12 @@ return {
       view_options = {
         show_hidden = true,
         is_always_hidden = (function()
-          local hidden_dirs = { [".."] = true, [".git"] = true, ["node_modules"] = true }
+          local hidden_dirs = {
+            [".."] = true,
+            [".git"] = true,
+            ["node_modules"] = true,
+            ["deps"] = true,
+          }
           return function(name, bufnr)
             return hidden_dirs[name] or false
           end
