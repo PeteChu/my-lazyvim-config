@@ -23,9 +23,9 @@ return {
       local user = "petechu.dev"
       user = user:sub(1, 1):upper() .. user:sub(2)
       return {
-        model = "claude-3.5-sonnet",
+        -- model = "claude-3.5-sonnet",
         -- model = "o1-preview",
-        -- model = "o1-mini",
+        model = "o1-mini",
         auto_insert_mode = true,
         question_header = "  " .. user .. " ",
         answer_header = "  Copilot ",
