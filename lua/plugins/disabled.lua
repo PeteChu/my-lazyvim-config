@@ -17,6 +17,7 @@ return {
   { "elixir-tools/elixir-tools.nvim", enabled = false },
   { "ramilito/kubectl.nvim", enabled = false },
   { "echasnovski/mini.animate", enabled = false },
+  { "stevearc/oil.nvim", enabled = false },
 
   -- Disabled in favor of Lazy 14.x
   { "nvim-telescope/telescope.nvim", enabled = false },
