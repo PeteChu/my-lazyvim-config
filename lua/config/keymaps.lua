@@ -65,8 +65,6 @@ end, { noremap = true, expr = true })
 
 vim.api.nvim_create_user_command("G", require("neogit").open, {})
 
-vim.keymap.set("n", "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', { noremap = true, silent = true })
-
 vim.keymap.set("n", "yc", function()
   vim.api.nvim_feedkeys("yygccp", "m", false)
 end)

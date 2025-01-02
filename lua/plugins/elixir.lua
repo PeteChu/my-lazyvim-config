@@ -30,4 +30,9 @@ return {
       "nvim-lua/plenary.nvim",
     },
   },
+  {
+    "synic/refactorex.nvim",
+    ft = "elixir",
+    config = true,
+  },
 }

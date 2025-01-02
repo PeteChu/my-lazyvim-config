@@ -5,13 +5,9 @@ return {
   build = ":TSUpdate html",
   dependencies = {
     "nvim-telescope/telescope.nvim",
-    "nvim-lua/plenary.nvim", -- required by telescope
+    -- "ibhagwan/fzf-lua",
+    "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-
-    -- optional
-    "nvim-treesitter/nvim-treesitter",
-    "rcarriga/nvim-notify",
-    "nvim-tree/nvim-web-devicons",
   },
   lazy = leet_arg ~= vim.fn.argv()[1],
   opts = {
