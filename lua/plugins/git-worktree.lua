@@ -1,18 +1,21 @@
 local fzf_lua = require("fzf-lua")
 local git_worktree = require("git-worktree")
+local Job = require("plenary.job")
 
 -- Function to get git worktrees
 local function list_git_worktrees()
-  local handle, err = io.popen("git worktree list --porcelain")
-  if not handle then
-    vim.notify("Failed to list git worktrees: " .. err, vim.log.levels.ERROR)
+  local result = Job:new({
+    command = "git",
+    args = { "worktree", "list", "--porcelain" },
+  }):sync()
+
+  if not result then
+    vim.notify("Failed to list git worktrees", vim.log.levels.ERROR)
     return {}
   end
 
-  local result = handle:read("*a")
-  handle:close()
-
-  if not result then
+  local output = table.concat(result, "\n")
+  if output == "" then
     return {}
   end
 
@@ -21,7 +24,7 @@ local function list_git_worktrees()
   local current_worktree = nil
   local current_branch = nil
 
-  for line in result:gmatch("[^\r\n]+") do
+  for line in output:gmatch("[^\r\n]+") do
     if line:match("^worktree ") then
       current_worktree = line:sub(10)
     elseif line:match("^branch ") then
@@ -119,9 +122,11 @@ function _G.fzf_delete_worktree()
         local default_worktree = get_default_worktree()
 
         -- Get the current git repository root
-        local handle = io.popen("git rev-parse --show-toplevel")
-        local current_git_root = handle and handle:read("*l")
-        handle:close()
+        local result = Job:new({
+          command = "git",
+          args = { "rev-parse", "--show-toplevel" },
+        }):sync()
+        local current_git_root = result and result[1]
 
         -- Check if we're deleting the current worktree
         if current_git_root and current_git_root == worktree_path then
@@ -147,11 +152,13 @@ function _G.fzf_delete_worktree()
           end)
         else
           -- Check for modified or untracked files
-          local check_handle = io.popen(string.format("cd %s && git status --porcelain", worktree_path))
-          local status_output = check_handle and check_handle:read("*a")
-          check_handle:close()
+          local status_result = Job:new({
+            command = "git",
+            args = { "status", "--porcelain" },
+            cwd = worktree_path,
+          }):sync()
 
-          local has_changes = status_output and status_output ~= ""
+          local has_changes = status_result and #status_result > 0
 
           local function perform_delete(force)
             local success, err = pcall(function()
@@ -188,15 +195,16 @@ function _G.fzf_delete_worktree()
 end
 
 local function get_git_root()
-  local handle = io.popen("git rev-parse --git-common-dir")
-  if not handle then
+  local result = Job:new({
+    command = "git",
+    args = { "rev-parse", "--git-common-dir" },
+  }):sync()
+
+  if not result or #result == 0 then
     return nil
   end
-  local git_dir = handle:read("*l")
-  handle:close()
-  if not git_dir then
-    return nil
-  end
+
+  local git_dir = result[1]
   -- Remove .git from the path to get the root
   return git_dir:gsub("/.git$", "")
 end
