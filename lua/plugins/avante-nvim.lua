@@ -47,6 +47,12 @@ return {
     windows = {
       width = 35,
     },
+    file_selector = {
+      --- @alias FileSelectorProvider "native" | "fzf" | "telescope" | string
+      provider = "fzf",
+      -- Options override for custom providers
+      provider_opts = {},
+    },
   },
   build = "make",
   dependencies = {

@@ -273,6 +273,12 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
       {
+        "<leader>gw",
+        "",
+        desc = "+worktree",
+        mode = { "n", "v" },
+      },
+      {
         "<leader>gwc",
         "<cmd>lua fzf_create_worktree()<CR>",
         desc = "Git Worktree Create",
