@@ -2,11 +2,12 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   lazy = false,
+  version = false,
   opts = {
     -- add any opts here
-    -- provider = "deepseek",
+    provider = "deepseek",
     -- provider = "copilot",
-    provider = "claude", -- Recommend using Claude
+    -- provider = "claude", -- Recommend using Claude
     claude = {
       endpoint = "https://api.anthropic.com",
       model = "claude-3-5-sonnet-latest",
@@ -16,32 +17,16 @@ return {
     },
     vendors = {
       deepseek = {
-        endpoint = "https://api.deepseek.com/chat/completions",
-        model = "deepseek-coder",
+        __inherited_from = "openai",
         api_key_name = "DEEPSEEK_API_KEY",
-        parse_curl_args = function(opts, code_opts)
-          return {
-            url = opts.endpoint,
-            headers = {
-              ["Accept"] = "application/json",
-              ["Content-Type"] = "application/json",
-              ["Authorization"] = "Bearer " .. os.getenv(opts.api_key_name),
-            },
-            body = {
-              model = opts.model,
-              messages = { -- you can make your own message, but this is very advanced
-                { role = "system", content = code_opts.system_prompt },
-                { role = "user", content = require("avante.providers.openai").get_user_message(code_opts) },
-              },
-              temperature = 0,
-              max_tokens = 4096,
-              stream = true, -- this will be set by default.
-            },
-          }
-        end,
-        parse_response_data = function(data_stream, event_state, opts)
-          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-        end,
+        endpoint = "https://api.deepseek.com",
+        model = "deepseek-chat",
+      },
+      ollama = {
+        __inherited_from = "openai",
+        api_key_name = "",
+        endpoint = "http://127.0.0.1:11434/v1",
+        model = "phi4",
       },
     },
     windows = {

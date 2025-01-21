@@ -10,7 +10,8 @@ return {
   config = function()
     local gen = require("gen")
     gen.prompts = merge_enum(gen.prompts, prompts)
-    gen.model = "qwen2.5-coder:latest"
+    gen.model = "phi4:latest"
+    -- gen.model = "qwen2.5-coder:latest"
     gen.display_mode = "split"
   end,
 }
