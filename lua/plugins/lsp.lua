@@ -12,27 +12,27 @@ return {
       },
     },
     servers = {
-      emmet_language_server = {
-        filetypes = {
-          "css",
-          "eruby",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "less",
-          "sass",
-          "scss",
-          "pug",
-          "typescriptreact",
-          "heex",
-          "elixir",
-          "phoenix_elixir",
-        },
-        includeLanguages = {
-          elixir = "html",
-          phoenix_elixir = "html",
-        },
-      },
+      -- emmet_language_server = {
+      --   filetypes = {
+      --     "css",
+      --     "eruby",
+      --     "html",
+      --     "javascript",
+      --     "javascriptreact",
+      --     "less",
+      --     "sass",
+      --     "scss",
+      --     "pug",
+      --     "typescriptreact",
+      --     "heex",
+      --     "elixir",
+      --     "phoenix_elixir",
+      --   },
+      --   includeLanguages = {
+      --     elixir = "html",
+      --     phoenix_elixir = "html",
+      --   },
+      -- },
     },
   },
   init = function()

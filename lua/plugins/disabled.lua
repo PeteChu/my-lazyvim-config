@@ -1,8 +1,8 @@
 return {
   -- { "folke/persistence.nvim", enabled = false },
   -- { "epwalsh/obsidian.nvim", enabled = false },
-  -- { "David-Kunz/gen.nvim", enabled = false },
-  -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "David-Kunz/gen.nvim", enabled = false },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   -- { "folke/flash.nvim", enabled = false },
   { "rmagatti/auto-session", enabled = false },
   -- { "nvimdev/lspsaga.nvim", enabled = false },

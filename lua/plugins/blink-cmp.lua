@@ -1,6 +1,6 @@
 return {
   {
-    "saghen/blink.compat",
+    "Saghen/blink.compat",
     -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
     version = "*",
     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
@@ -9,7 +9,7 @@ return {
     opts = {},
   },
   {
-    "saghen/blink.cmp",
+    "Saghen/blink.cmp",
     opts = {
       sources = {
         compat = { "avante_commands", "avante_mentions" },

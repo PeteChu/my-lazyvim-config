@@ -5,9 +5,10 @@ return {
   version = false,
   opts = {
     -- add any opts here
-    provider = "deepseek",
+    -- provider = "deepseek",
     -- provider = "copilot",
-    -- provider = "claude", -- Recommend using Claude
+    -- provider = "openai",
+    provider = "claude", -- Recommend using Claude
     claude = {
       endpoint = "https://api.anthropic.com",
       model = "claude-3-5-sonnet-latest",
@@ -15,12 +16,22 @@ return {
       max_tokens = 4096,
       api_key_name = "cmd:pass show api/claude",
     },
+    openai = {
+      endpoint = "https://api.openai.com/v1",
+      model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
+      timeout = 30000, -- timeout in milliseconds
+      temperature = 0, -- adjust if needed
+      api_key_name = "cmd:pass show api/openai",
+      max_tokens = 4096,
+    },
     vendors = {
       deepseek = {
         __inherited_from = "openai",
         api_key_name = "DEEPSEEK_API_KEY",
         endpoint = "https://api.deepseek.com",
         model = "deepseek-chat",
+        -- model = "deepseek-reasoner",
+        max_tokens = 8192,
       },
       ollama = {
         __inherited_from = "openai",
@@ -34,7 +45,7 @@ return {
     },
     file_selector = {
       --- @alias FileSelectorProvider "native" | "fzf" | "telescope" | string
-      provider = "fzf",
+      provider = "snacks",
       -- Options override for custom providers
       provider_opts = {},
     },
