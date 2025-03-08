@@ -28,7 +28,7 @@ return {
             },
             schema = {
               model = {
-                default = "claude-3-5-sonnet-20241022",
+                default = "claude-3-7-sonnet-latest",
               },
             },
           })
@@ -38,6 +38,24 @@ return {
             schema = {
               model = {
                 default = "gpt-4o",
+              },
+            },
+          })
+        end,
+        openrouter = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "https://openrouter.ai/api",
+              api_key = "cmd:pass show api/openrouter",
+              chat_url = "/v1/chat/completions",
+            },
+            headers = {
+              ["Content-Type"] = "application/json",
+              ["Authorization"] = "Bearer ${api_key}",
+            },
+            schema = {
+              model = {
+                default = "qwen/qwq-32b:free",
               },
             },
           })

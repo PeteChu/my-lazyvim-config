@@ -9,16 +9,24 @@ return {
     -- provider = "copilot",
     -- provider = "openai",
     provider = "claude", -- Recommend using Claude
+    -- provider = "openrouter",
+    cursor_applying_provider = "groq",
     claude = {
       endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-sonnet-latest",
-      temperature = 0,
+      model = "claude-3-7-sonnet-latest",
+      -- temperature = 0,
+      temperature = 1, -- When thinking enabled
       max_tokens = 4096,
       api_key_name = "cmd:pass show api/claude",
+      thinking = {
+        type = "enabled",
+        budget_tokens = 2048,
+      },
     },
     openai = {
       endpoint = "https://api.openai.com/v1",
       model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
+      -- model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
       timeout = 30000, -- timeout in milliseconds
       temperature = 0, -- adjust if needed
       api_key_name = "cmd:pass show api/openai",
@@ -37,7 +45,24 @@ return {
         __inherited_from = "openai",
         api_key_name = "",
         endpoint = "http://127.0.0.1:11434/v1",
-        model = "phi4",
+        model = "qwen2.5-coder:7b",
+      },
+      groq = { -- define groq provider
+        __inherited_from = "openai",
+        api_key_name = "cmd:pass show api/groq",
+        endpoint = "https://api.groq.com/openai/v1/",
+        -- model = "qwen-2.5-coder-32b",
+        model = "llama-3.3-70b-versatile",
+        max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+      },
+      openrouter = {
+        __inherited_from = "openai",
+        api_key_name = "cmd:pass show api/openrouter",
+        endpoint = "https://openrouter.ai/api/v1",
+        model = "qwen/qwq-32b:free",
+        max_tokens = 32768,
+        temperature = 0.6,
+        disable_tools = true, -- disable tools!
       },
     },
     windows = {
@@ -55,10 +80,6 @@ return {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    --- The below dependencies are optional,
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
