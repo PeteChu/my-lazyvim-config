@@ -18,6 +18,9 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 -- keymap("n", "n", "nzzzv")
 -- keymap("n", "N", "Nzzzv")
 
+-- keymap("n", "<C-u>", "<C-u>zz")
+-- keymap("n", "<C-d>", "<C-d>zz")
+
 -- replace without copy current selected
 -- keymap('x', '<leader>p', "\"_dp")
 keymap("x", "<leader>p", [["_dP]])
@@ -63,10 +66,13 @@ vim.keymap.set("n", "dd", function()
   end
 end, { noremap = true, expr = true })
 
-vim.api.nvim_create_user_command("G", require("neogit").open, {})
-
 vim.keymap.set("n", "yc", function()
   vim.api.nvim_feedkeys("yygccp", "m", false)
 end)
 
 vim.keymap.set("n", "<C-c>", "ciw")
+
+-- VSCode extension
+if not vim.g.vscode then
+  vim.api.nvim_create_user_command("G", require("neogit").open, {})
+end

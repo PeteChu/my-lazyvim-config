@@ -22,7 +22,7 @@ return {
           end,
         },
         projectionist = {
-          enable = true,
+          enable = false,
         },
       })
     end,

@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 -- prefil edit window with common scenarios to avoid repeating query and submit immediately
 local prefill_edit_window = function(request)
   require("avante.api").edit()

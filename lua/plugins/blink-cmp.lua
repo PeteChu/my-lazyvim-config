@@ -12,7 +12,11 @@ return {
     "Saghen/blink.cmp",
     opts = {
       sources = {
-        compat = { "avante_commands", "avante_mentions" },
+        compat = {
+          "avante_commands",
+          "avante_mentions",
+          "avante_files",
+        },
       },
     },
   },
