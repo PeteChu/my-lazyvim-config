@@ -14,10 +14,10 @@ return {
     opts = {
       strategies = {
         chat = {
-          adapter = "githubmodels",
+          adapter = "customcopilot",
         },
         inline = {
-          adapter = "githubmodels",
+          adapter = "customcopilot",
         },
       },
       adapters = {
@@ -38,6 +38,16 @@ return {
             schema = {
               model = {
                 default = "gpt-4o",
+              },
+            },
+          })
+        end,
+        customcopilot = function()
+          return require("codecompanion.adapters").extend("copilot", {
+            name = "customcopilot",
+            schema = {
+              model = {
+                default = "claude-3.7-sonnet",
               },
             },
           })

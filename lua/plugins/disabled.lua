@@ -1,7 +1,6 @@
 return {
   -- { "folke/persistence.nvim", enabled = false },
   -- { "epwalsh/obsidian.nvim", enabled = false },
-  { "David-Kunz/gen.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   -- { "folke/flash.nvim", enabled = false },
   { "rmagatti/auto-session", enabled = false },
@@ -17,7 +16,6 @@ return {
   -- { "echasnovski/mini.files", enabled = false },
 
   -- AI
-  { "CopilotC-Nvim/CopilotChat.nvim", enabled = false },
   -- { "yetone/avante.nvim", enabled = false },
   -- { "olimorris/codecompanion.nvim", enabled = false },
 
