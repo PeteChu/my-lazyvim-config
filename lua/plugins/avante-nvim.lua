@@ -18,9 +18,9 @@ return {
     -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
     copilot = {
       __inherited_from = "copilot",
-      -- model = "claude-3.7-sonnet-thought",
+      model = "claude-3.7-sonnet-thought",
       -- model = "o3-mini",
-      model = "claude-3.7-sonnet",
+      -- model = "claude-3.7-sonnet",
     },
     claude = {
       endpoint = "https://api.anthropic.com",
@@ -45,8 +45,7 @@ return {
       model = "o3-mini", -- your desired model (or use gpt-4o, o3-mini etc.)
       timeout = 30000, -- timeout in milliseconds
       temperature = 0, -- adjust if needed
-      -- max_tokens = 200000,
-      max_completion_tokens = 100000,
+      max_tokens = 100000,
       -- api_key_name = "cmd:pass show api/openai",
       api_key_name = { "pass", "show", "api/openai" },
     },
@@ -57,6 +56,7 @@ return {
         model = "deepseek-chat",
         max_tokens = 8192,
         api_key_name = "DEEPSEEK_API_KEY",
+        disable_tools = { "web_search" },
       },
       ollama = {
         __inherited_from = "openai",
@@ -68,7 +68,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://api.groq.com/openai/v1/",
         model = "llama-3.3-70b-versatile",
-        max_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+        max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
         -- api_key_name = "cmd:pass show api/groq",
         api_key_name = { "pass", "show", "api/groq" },
       },
@@ -92,6 +92,7 @@ return {
       -- Options override for custom providers
       provider_opts = {},
     },
+    -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
     system_prompt = function()
       local hub = require("mcphub").get_hub_instance()
       return hub:get_active_servers_prompt()

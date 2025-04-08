@@ -1,13 +1,25 @@
 return {
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   priority = 1000,
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       transparent_mode = true,
+  --     })
+  --     vim.cmd([[ colorscheme gruvbox ]])
+  --   end,
+  -- },
   {
-    "ellisonleao/gruvbox.nvim",
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
     priority = 1000,
-    config = function()
-      require("gruvbox").setup({
-        transparent_mode = true,
-        -- dim_inactive = true,
-      })
-      vim.cmd([[ colorscheme gruvbox ]])
+    opts = {
+      transparent = true,
+      italic_comments = true,
+    },
+    config = function(_, opts)
+      require("cyberdream").setup(opts)
+      vim.cmd([[ colorscheme cyberdream ]])
     end,
   },
 }
