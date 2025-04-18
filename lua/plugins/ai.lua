@@ -47,7 +47,9 @@ return {
             name = "customcopilot",
             schema = {
               model = {
-                default = "claude-3.7-sonnet-thought",
+                -- default = "gpt-4.1",
+                -- default = "claude-3.7-sonnet-thought",
+                default = "gemini-2.5-pro",
               },
             },
           })

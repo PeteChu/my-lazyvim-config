@@ -6,8 +6,13 @@ return {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("go").setup()
+    opts = {
+      lsp_inlay_hints = {
+        enable = false,
+      },
+    },
+    config = function(_, opts)
+      require("go").setup(opts)
     end,
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
