@@ -10,10 +10,10 @@ return {
     },
     copilot = {
       __inherited_from = "copilot",
-      -- model = "gemini-2.5-pro",
+      model = "gemini-2.5-pro",
       -- model = "o4-mini",
       -- model = "claude-3.7-sonnet-thought",
-      model = "claude-3.7-sonnet",
+      -- model = "claude-3.7-sonnet",
     },
     claude = {
       endpoint = "https://api.anthropic.com",
@@ -69,10 +69,8 @@ return {
     windows = {
       width = 35,
     },
-    file_selector = {
-      --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string | fun(params: avante.file_selector.IParams|nil): nil
+    selector = {
       provider = "snacks",
-      -- Options override for custom providers
       provider_opts = {},
     },
     -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub

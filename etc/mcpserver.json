@@ -1,13 +1,21 @@
 {
   "mcpServers": {
     "sequentialthinking": {
-      "name": "github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
       "disabled": true,
+      "name": "sequentialthinking",
+      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "command": "npx"
+      ]
+    },
+    "context7": {
+      "disabled": false,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
     }
   },
   "nativeMCPServers": {
