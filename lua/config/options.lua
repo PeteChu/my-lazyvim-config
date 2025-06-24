@@ -4,7 +4,7 @@
 
 local opt = vim.opt
 
-opt.scrolloff = 10
+opt.scrolloff = 7
 opt.colorcolumn = "80"
 opt.wrap = true
 opt.textwidth = 80

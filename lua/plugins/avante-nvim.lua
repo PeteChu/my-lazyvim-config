@@ -4,66 +4,39 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = "copilot",
-    cursor_applying_provider = "groq",
-    behaviour = {
-      enable_cursor_planning_mode = true, -- enable cursor planning mode!
-    },
-    copilot = {
-      __inherited_from = "copilot",
-      model = "gemini-2.5-pro",
-      -- model = "o4-mini",
-      -- model = "claude-3.7-sonnet-thought",
-      -- model = "claude-3.7-sonnet",
-    },
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-7-sonnet-latest",
-      temperature = 0,
-      max_tokens = 4096,
-      api_key_name = "cmd:pass show api/claude",
-    },
-    claude_thought = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-7-sonnet-latest",
-      temperature = 1,
-      max_tokens = 20000,
-      api_key_name = "cmd:pass show api/claude",
-      thinking = {
-        type = "enabled",
-        budget_tokens = 8000,
+    providers = {
+      copilot = {
+        __inherited_from = "copilot",
+        -- model = "gemini-2.5-pro",
+        -- model = "o4-mini",
+        model = "claude-sonnet-4",
       },
-    },
-    openai = {
-      endpoint = "https://api.openai.com/v1",
-      model = "o4-mini", -- your desired model (or use gpt-4o, o3-mini etc.)
-      timeout = 30000, -- timeout in milliseconds
-      temperature = 0, -- adjust if needed
-      max_tokens = 100000,
-      api_key_name = "cmd:pass show api/openai",
-    },
-    vendors = {
-      deepseek = {
-        __inherited_from = "openai",
-        endpoint = "https://api.deepseek.com",
-        model = "deepseek-chat",
-        max_tokens = 8192,
-        api_key_name = "DEEPSEEK_API_KEY",
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-sonnet-4-latest",
+        api_key_name = "cmd:pass show api/claude",
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 4096,
+        },
       },
-      groq = {
-        __inherited_from = "openai",
-        endpoint = "https://api.groq.com/openai/v1/",
-        model = "llama-3.3-70b-versatile",
-        max_tokens = 32768,
-        api_key_name = "cmd:pass show api/groq",
+      claude_thought = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-sonnet-4-latest",
+        api_key_name = "cmd:pass show api/claude",
+        extra_request_body = {
+          max_tokens = 20000,
+          thinking = {
+            type = "enabled",
+            budget_tokens = 10000,
+          },
+        },
       },
-      openrouter = {
-        __inherited_from = "openai",
-        endpoint = "https://openrouter.ai/api/v1",
-        model = "qwen/qwq-32b:free",
-        max_tokens = 32768,
-        temperature = 0.6,
-        disable_tools = true, -- disable tools!
-        api_key_name = "cmd:pass show api/openrouter",
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "o4-mini", -- your desired model (or use gpt-4o, o3-mini etc.)
+        timeout = 30000, -- timeout in milliseconds
+        api_key_name = "cmd:pass show api/openai",
       },
     },
     windows = {

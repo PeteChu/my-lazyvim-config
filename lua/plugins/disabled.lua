@@ -14,6 +14,7 @@ return {
   { "echasnovski/mini.animate", enabled = false },
   { "stevearc/oil.nvim", enabled = false },
   -- { "echasnovski/mini.files", enabled = false },
+  { "m4xshen/hardtime.nvim", enabled = false },
 
   -- AI
   -- { "yetone/avante.nvim", enabled = false },

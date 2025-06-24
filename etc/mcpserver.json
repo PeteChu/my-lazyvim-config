@@ -1,31 +1,76 @@
 {
   "mcpServers": {
-    "sequentialthinking": {
-      "disabled": true,
-      "name": "sequentialthinking",
-      "command": "npx",
+    "tidewave": {
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
+        "http://localhost:4000/tidewave/mcp"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "get_logs",
+        "get_source_location",
+        "get_package_location",
+        "project_eval",
+        "execute_sql_query",
+        "get_ecto_schemas",
+        "get_process_info",
+        "trace_process",
+        "list_liveview_pages",
+        "package_docs_search",
+        "package_search"
+      ],
+      "command": "mcp-proxy"
     },
     "context7": {
-      "disabled": false,
-      "command": "npx",
       "args": [
         "-y",
         "@upstash/context7-mcp@latest"
-      ]
+      ],
+      "disabled": true,
+      "autoApprove": [
+        "resolve-library-id",
+        "get-library-docs"
+      ],
+      "command": "npx"
+    },
+    "sequentialthinking": {
+      "name": "sequentialthinking",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "sequentialthinking"
+      ],
+      "command": "npx"
+    },
+    "fetcher": {
+      "args": [
+        "-y",
+        "fetcher-mcp"
+      ],
+      "disabled": true,
+      "autoApprove": [
+        "fetch_url",
+        "fetch_urls"
+      ],
+      "command": "npx"
     }
   },
   "nativeMCPServers": {
-    "mcphub": {
-      "disabled": false,
-      "disabled_tools": [
+    "neovim": {
+      "custom_instructions": {
+        "disabled": false
+      },
+      "disabled": true,
+      "disabled_prompts": [
         
       ]
     },
-    "neovim": {
+    "mcphub": {
+      "disabled_tools": [
+        
+      ],
       "disabled": true
     }
   }
