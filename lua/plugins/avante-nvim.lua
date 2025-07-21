@@ -3,34 +3,14 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = "copilot",
+    provider = "openrouter",
     providers = {
       copilot = {
         __inherited_from = "copilot",
         -- model = "gemini-2.5-pro",
         -- model = "o4-mini",
-        model = "claude-sonnet-4",
-      },
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-sonnet-4-latest",
-        api_key_name = "cmd:pass show api/claude",
-        extra_request_body = {
-          temperature = 0,
-          max_tokens = 4096,
-        },
-      },
-      claude_thought = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-sonnet-4-latest",
-        api_key_name = "cmd:pass show api/claude",
-        extra_request_body = {
-          max_tokens = 20000,
-          thinking = {
-            type = "enabled",
-            budget_tokens = 10000,
-          },
-        },
+        -- model = "claude-sonnet-4",
+        model = "gpt-4.1",
       },
       openai = {
         endpoint = "https://api.openai.com/v1",
@@ -38,6 +18,19 @@ return {
         timeout = 30000, -- timeout in milliseconds
         api_key_name = "cmd:pass show api/openai",
       },
+      gemini = {
+        __inherited_from = "gemini",
+        model = "gemini-2.5-pro",
+      },
+      openrouter = {
+        __inherited_from = "openai",
+        endpoint = "https://openrouter.ai/api/v1",
+        model = "moonshotai/kimi-k2",
+        api_key_name = "cmd:pass show api/openrouter",
+      },
+    },
+    behaviour = {
+      enable_fastapply = true,
     },
     windows = {
       width = 35,

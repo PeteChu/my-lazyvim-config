@@ -10,7 +10,7 @@ return {
       elixir.setup({
         nextls = { enable = true },
         elixirls = {
-          enable = true,
+          enable = false,
           settings = elixirls.settings({
             dialyzerEnabled = false,
             enableTestLenses = false,
@@ -22,7 +22,7 @@ return {
           end,
         },
         projectionist = {
-          enable = false,
+          enable = true,
         },
       })
     end,
@@ -30,13 +30,14 @@ return {
       "nvim-lua/plenary.nvim",
     },
   },
-  {
-    "synic/refactorex.nvim",
-    ft = "elixir",
-    config = true,
-    opts = {
-      auto_update = true,
-      pin_version = nil,
-    },
-  },
+  -- {
+  --   "synic/refactorex.nvim",
+  --   ft = "elixir",
+  --   ---@module "refactorex.nvim"
+  --   ---@type refactorex.Config
+  --   opts = {
+  --     auto_update = true,
+  --     pin_version = nil,
+  --   },
+  -- },
 }

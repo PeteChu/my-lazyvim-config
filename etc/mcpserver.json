@@ -1,10 +1,44 @@
 {
   "mcpServers": {
+    "code-reasoning": {
+      "args": [
+        "-y",
+        "@mettamatt/code-reasoning"
+      ],
+      "autoApprove": [
+        "code-reasoning"
+      ],
+      "command": "npx",
+      "disabled": true
+    },
+    "context7": {
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "autoApprove": [
+        "resolve-library-id",
+        "get-library-docs"
+      ],
+      "command": "npx",
+      "disabled": true
+    },
+    "sequentialthinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "autoApprove": [
+        "sequentialthinking"
+      ],
+      "command": "npx",
+      "disabled": true,
+      "name": "sequentialthinking"
+    },
     "tidewave": {
       "args": [
         "http://localhost:4000/tidewave/mcp"
       ],
-      "disabled": false,
       "autoApprove": [
         "get_logs",
         "get_source_location",
@@ -18,60 +52,21 @@
         "package_docs_search",
         "package_search"
       ],
-      "command": "mcp-proxy"
-    },
-    "context7": {
-      "args": [
-        "-y",
-        "@upstash/context7-mcp@latest"
-      ],
-      "disabled": true,
-      "autoApprove": [
-        "resolve-library-id",
-        "get-library-docs"
-      ],
-      "command": "npx"
-    },
-    "sequentialthinking": {
-      "name": "sequentialthinking",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "disabled": false,
-      "autoApprove": [
-        "sequentialthinking"
-      ],
-      "command": "npx"
-    },
-    "fetcher": {
-      "args": [
-        "-y",
-        "fetcher-mcp"
-      ],
-      "disabled": true,
-      "autoApprove": [
-        "fetch_url",
-        "fetch_urls"
-      ],
-      "command": "npx"
+      "command": "mcp-proxy",
+      "disabled": true
     }
   },
   "nativeMCPServers": {
+    "mcphub": {
+      "disabled": true,
+      "disabled_tools": []
+    },
     "neovim": {
       "custom_instructions": {
         "disabled": false
       },
       "disabled": true,
-      "disabled_prompts": [
-        
-      ]
-    },
-    "mcphub": {
-      "disabled_tools": [
-        
-      ],
-      "disabled": true
+      "disabled_prompts": []
     }
   }
 }

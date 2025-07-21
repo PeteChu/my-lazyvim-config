@@ -6,10 +6,11 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     keys = {
-      { "<leader>o", "", desc = "+CodeCompanion", mode = { "n", "v" } },
-      { "<leader>oo", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanionChat" },
-      { "<leader>op", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanionActions" },
-      { "<leader>oo", ":CodeCompanion /buffer ", mode = { "v" }, desc = "CodeCompanionAsk" },
+      -- { "<leader>o", "", desc = "+CodeCompanion", mode = { "n", "v" } },
+      -- { "<leader>oo", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanionChat" },
+      -- { "<leader>op", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanionActions" },
+      { "<leader>og", "<cmd>CodeCompanion /commit<cr>", desc = "CodeCompanionCommit" },
+      -- { "<leader>oo", ":CodeCompanion /buffer ", mode = { "v" }, desc = "CodeCompanionAsk" },
     },
     opts = {
       strategies = {
@@ -47,9 +48,10 @@ return {
             name = "customcopilot",
             schema = {
               model = {
-                -- default = "gpt-4.1",
+                default = "gpt-4.1",
                 -- default = "claude-3.7-sonnet-thought",
-                default = "gemini-2.5-pro",
+                -- default = "gemini-2.5-pro",
+                -- default = "claude-sonnet-4",
               },
             },
           })
@@ -67,7 +69,7 @@ return {
             },
             schema = {
               model = {
-                default = "qwen/qwq-32b:free",
+                default = "deepseek/deepseek-r1-0528:free",
               },
             },
           })
