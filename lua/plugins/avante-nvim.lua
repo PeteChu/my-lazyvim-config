@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = "openrouter",
+    provider = "copilot",
     providers = {
       copilot = {
         __inherited_from = "copilot",
@@ -25,7 +25,12 @@ return {
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
-        model = "moonshotai/kimi-k2",
+        model = "qwen/qwen3-coder:floor",
+        extra_request_body = {
+          provider = {
+            quantizations = { "fp8" },
+          },
+        },
         api_key_name = "cmd:pass show api/openrouter",
       },
     },
