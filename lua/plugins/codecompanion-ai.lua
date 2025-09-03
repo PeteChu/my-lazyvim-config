@@ -6,70 +6,28 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     keys = {
-      -- { "<leader>o", "", desc = "+CodeCompanion", mode = { "n", "v" } },
-      -- { "<leader>oo", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanionChat" },
-      -- { "<leader>op", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanionActions" },
+      { "<leader>o", "", desc = "+CodeCompanion", mode = { "n", "v" } },
+      { "<leader>oo", "<cmd>CodeCompanionChat<cr>", desc = "CodeCompanionChat" },
       { "<leader>og", "<cmd>CodeCompanion /commit<cr>", desc = "CodeCompanionCommit" },
+      -- { "<leader>op", "<cmd>CodeCompanionActions<cr>", desc = "CodeCompanionActions" },
       -- { "<leader>oo", ":CodeCompanion /buffer ", mode = { "v" }, desc = "CodeCompanionAsk" },
     },
     opts = {
       strategies = {
         chat = {
-          adapter = "customcopilot",
+          adapter = "gemini_cli",
         },
         inline = {
-          adapter = "customcopilot",
+          adapter = "gemini_cli",
         },
       },
       adapters = {
-        anthropic = function()
-          return require("codecompanion.adapters").extend("anthropic", {
-            env = {
-              api_key = "cmd:pass show api/claude",
-            },
-            schema = {
-              model = {
-                default = "claude-3-7-sonnet-latest",
-              },
-            },
-          })
-        end,
-        githubmodels = function()
-          return require("codecompanion.adapters").extend("githubmodels", {
-            schema = {
-              model = {
-                default = "gpt-4o",
-              },
-            },
-          })
-        end,
         customcopilot = function()
           return require("codecompanion.adapters").extend("copilot", {
             name = "customcopilot",
             schema = {
               model = {
                 default = "gpt-4.1",
-                -- default = "claude-3.7-sonnet-thought",
-                -- default = "gemini-2.5-pro",
-                -- default = "claude-sonnet-4",
-              },
-            },
-          })
-        end,
-        openrouter = function()
-          return require("codecompanion.adapters").extend("openai_compatible", {
-            env = {
-              url = "https://openrouter.ai/api",
-              api_key = "cmd:pass show api/openrouter",
-              chat_url = "/v1/chat/completions",
-            },
-            headers = {
-              ["Content-Type"] = "application/json",
-              ["Authorization"] = "Bearer ${api_key}",
-            },
-            schema = {
-              model = {
-                default = "deepseek/deepseek-r1-0528:free",
               },
             },
           })

@@ -2,7 +2,10 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
+  ---@module 'avante'
+  ---@type avante.Config
   opts = {
+    instructions_file = "agents.md",
     provider = "copilot",
     providers = {
       copilot = {
@@ -37,26 +40,16 @@ return {
     behaviour = {
       enable_fastapply = true,
     },
-    windows = {
-      width = 35,
-    },
+    -- windows = {
+    --   width = 35,
+    -- },
     selector = {
       provider = "snacks",
       provider_opts = {},
     },
-    -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
-    system_prompt = function()
-      local hub = require("mcphub").get_hub_instance()
-      return hub:get_active_servers_prompt()
-    end,
-    -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
-    custom_tools = function()
-      return {
-        require("mcphub.extensions.avante").mcp_tool(),
-      }
-    end,
   },
-  build = "make",
+  build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+    or "make",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",
