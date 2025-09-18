@@ -21,18 +21,6 @@ return {
           adapter = "gemini_cli",
         },
       },
-      adapters = {
-        customcopilot = function()
-          return require("codecompanion.adapters").extend("copilot", {
-            name = "customcopilot",
-            schema = {
-              model = {
-                default = "gpt-4.1",
-              },
-            },
-          })
-        end,
-      },
     },
   },
 }
