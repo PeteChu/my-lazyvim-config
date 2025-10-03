@@ -12,7 +12,7 @@ return {
         __inherited_from = "copilot",
         -- model = "gemini-2.5-pro",
         -- model = "o4-mini",
-        model = "claude-sonnet-4",
+        model = "claude-sonnet-4.5",
         -- model = "gpt-4.1",
       },
       openai = {

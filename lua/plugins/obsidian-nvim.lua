@@ -20,7 +20,7 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/Workspace/notes/Obsidian/personal",
+        path = "~/Sync/notes",
       },
       -- {
       --   name = "personal",
