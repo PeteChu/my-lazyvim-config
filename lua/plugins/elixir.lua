@@ -10,7 +10,7 @@ return {
       elixir.setup({
         nextls = { enable = true },
         elixirls = {
-          enable = false,
+          enable = true,
           settings = elixirls.settings({
             dialyzerEnabled = false,
             enableTestLenses = false,

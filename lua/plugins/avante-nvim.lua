@@ -43,10 +43,10 @@ return {
     -- windows = {
     --   width = 35,
     -- },
-    selector = {
-      provider = "snacks",
-      provider_opts = {},
-    },
+    -- selector = {
+    --   provider = "snacks",
+    --   provider_opts = {},
+    -- },
   },
   build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
     or "make",
@@ -55,6 +55,7 @@ return {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
+    "ibhagwan/fzf-lua", -- for file_selector provider fzf
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
