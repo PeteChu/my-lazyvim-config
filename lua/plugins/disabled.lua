@@ -7,10 +7,7 @@ return {
   { "akinsho/flutter-tools.nvim", enabled = false },
   { "elixir-tools/elixir-tools.nvim", enabled = false },
 
-  -- AI
-  { "yetone/avante.nvim", enabled = false },
-  -- { "olimorris/codecompanion.nvim", enabled = false },
-  { "NickvanDyke/opencode.nvim", enabled = false },
+  -- { "ray-x/go.nvim", enabled = false },
 
   -- Disabled in favor of Lazy 14.x
   { "nvim-telescope/telescope.nvim", enabled = false },

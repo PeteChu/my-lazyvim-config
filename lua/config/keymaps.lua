@@ -72,7 +72,7 @@ end)
 
 vim.keymap.set("n", "<C-c>", "ciw")
 
--- VSCode extension
-if not vim.g.vscode then
-  vim.api.nvim_create_user_command("G", require("neogit").open, {})
-end
+-- -- VSCode extension
+-- if not vim.g.vscode then
+--   vim.api.nvim_create_user_command("G", require("neogit").open, {})
+-- end
