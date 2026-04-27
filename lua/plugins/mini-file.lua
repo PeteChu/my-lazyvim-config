@@ -23,6 +23,24 @@ vim.api.nvim_create_autocmd("User", {
       vim.fn.setreg("+", relative)
       vim.notify("Yanked: " .. relative)
     end, { buffer = b, desc = "Yank relative path" })
+
+    -- Open with system opener
+    vim.keymap.set("n", "X", function()
+      local path = (MiniFiles.get_fs_entry() or {}).path
+      if path == nil then
+        return vim.notify("Cursor is not on valid entry")
+      end
+
+      vim.fn.jobstart({
+        vim.fn.executable("xdg-open") == 1 and "xdg-open"
+          or vim.fn.executable("open") == 1 and "open"
+          or vim.fn.executable("start") == 1 and "start"
+          or error("Can't find a suitable opener (xdg-open, open, start)"),
+        path,
+      }, {
+        detach = true,
+      })
+    end)
   end,
 })
 

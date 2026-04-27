@@ -8,7 +8,4 @@ return {
   { "elixir-tools/elixir-tools.nvim", enabled = false },
 
   -- { "ray-x/go.nvim", enabled = false },
-
-  -- Disabled in favor of Lazy 14.x
-  { "nvim-telescope/telescope.nvim", enabled = false },
 }
