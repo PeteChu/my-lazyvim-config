@@ -25,7 +25,7 @@ return {
       {
         "<c-.>",
         function()
-          require("sidekick.cli").toggle()
+          require("sidekick.cli").toggle({ filter = { installed = true } })
         end,
         desc = "Sidekick Toggle",
         mode = { "n", "t", "i", "x" },
@@ -56,7 +56,7 @@ return {
       {
         "<leader>at",
         function()
-          require("sidekick.cli").send({ msg = "{this}" })
+          require("sidekick.cli").send({ msg = "{this}", filter = { installed = true } })
         end,
         mode = { "x", "n" },
         desc = "Send This",
@@ -64,14 +64,14 @@ return {
       {
         "<leader>af",
         function()
-          require("sidekick.cli").send({ msg = "{file}" })
+          require("sidekick.cli").send({ msg = "{file}", filter = { installed = true } })
         end,
         desc = "Send File",
       },
       {
         "<leader>av",
         function()
-          require("sidekick.cli").send({ msg = "{selection}" })
+          require("sidekick.cli").send({ msg = "{selection}", filter = { installed = true } })
         end,
         mode = { "x" },
         desc = "Send Visual Selection",
@@ -88,9 +88,9 @@ return {
       {
         "<leader>ac",
         function()
-          require("sidekick.cli").toggle({ name = "claude", focus = true })
+          require("sidekick.cli").toggle({ name = "pi", focus = true })
         end,
-        desc = "Sidekick Toggle Claude",
+        desc = "Sidekick Toggle Pi",
       },
     },
   },
