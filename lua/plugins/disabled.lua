@@ -7,5 +7,5 @@ return {
   { "akinsho/flutter-tools.nvim", enabled = false },
   { "elixir-tools/elixir-tools.nvim", enabled = false },
 
-  -- { "ray-x/go.nvim", enabled = false },
+  { "ray-x/go.nvim", enabled = false },
 }

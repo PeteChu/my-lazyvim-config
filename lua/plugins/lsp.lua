@@ -5,7 +5,7 @@ return {
       -- signature = {
       --   enabled = false,
       -- },
-      inlay_hints = { enabled = false },
+      -- inlay_hints = { enabled = false },
       -- diagnostics = {
       --   float = {
       --     border = "rounded",
@@ -37,6 +37,7 @@ return {
               vim.bo[bufnr].modifiable = false
 
               vim.api.nvim_win_set_height(0, 10)
+              vim.api.nvim_win_set_cursor(0, { 1, 0 })
             end)
           end, { desc = "LSP hover in horizontal split" })
         end,

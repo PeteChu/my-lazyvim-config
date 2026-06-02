@@ -25,9 +25,9 @@ return {
       {
         "<c-.>",
         function()
-          require("sidekick.cli").toggle({ filter = { installed = true } })
+          require("sidekick.cli").focus({ filter = { installed = true } })
         end,
-        desc = "Sidekick Toggle",
+        desc = "Sidekick Focus",
         mode = { "n", "t", "i", "x" },
       },
       {
